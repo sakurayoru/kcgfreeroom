@@ -16,7 +16,7 @@ function getNow() {
     dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
     // デバッグ日時変更
     // dayOfWeek = 2;
-    // hour = 10;
+    // hour = 17;
     // min = 00;
     //出力用
     let s = mon + "月" + day + "日<br />" + hour + "時" + min + "分" + "<br />" + dayOfWeekStr + "曜日";
@@ -150,7 +150,7 @@ function fourth() {
 }
 function fifth() {
     if (dayOfWeek == 1) {
-        free = "E204(PC)<wbr>E208(電源複数)<br />E306(全机電源,PC)<br />E401(PC?)<wbr>E403(PC?)<wbr>E404<wbr>E405(PC?)<wbr>E406<wbr>E408<wbr>	E409<wbr>E410<br />E501(電源複数)<wbr>E503<wbr>E504(PC?)<wbr>E506<wbr>E507(PC?)<wbr>E508(PC?)<wbr>E509(PC?)<wbr>	E510(PC?)<wbr>E511(PC?)<wbr>E512(PC?)<br />";
+        free = "E208(電源複数)<br />E306(全机電源,PC)<br />E401(PC?)<wbr>E403(PC?)<wbr>E404<wbr>E405(PC?)<wbr>E406<wbr>E408<wbr>	E409<wbr>E410<br />E501(電源複数)<wbr>E503<wbr>E504(PC?)<wbr>E506<wbr>E507(PC?)<wbr>E508(PC?)<wbr>E509(PC?)<wbr>	E510(PC?)<wbr>E511(PC?)<wbr>E512(PC?)<br />";
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 2) {
