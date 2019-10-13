@@ -50,7 +50,7 @@ function getClass() {
         document.getElementById("class").innerHTML = nowclass;
         fifth()
     }
-    else if ((hour == 18 && min >= 20) || (hour <= 19)) {
+    else if ((hour == 18 && min >= 20) || (hour >= 19)) {
         add = dayOfWeek + 1;
         dayOfWeek = add % 7;
         tomorrow = day + 1;
