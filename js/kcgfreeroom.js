@@ -45,7 +45,7 @@ function getClass() {
         document.getElementById("class").innerHTML = nowclass;
         fourth()
     }
-    else if ((hour == 16 && min >= 40) || hour <= 17 || (hour == 18 && min < 20)) {
+    else if ((hour == 16 && min >= 40) || hour == 17 || (hour == 18 && min < 20)) {
         nowclass = "5限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         fifth()
