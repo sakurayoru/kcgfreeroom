@@ -14,8 +14,9 @@ function getNow() {
     sec = now.getSeconds();
     dayOfWeek = now.getDay();
     // デバッグ日時変更
-    dayOfWeek = 1;
-    hour = 18;
+    // dayOfWeek = 1;
+    // hour = 18;
+    // min == 00;
     let s = dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
     //出力用
     s = mon + "月" + day + "日" + hour + "時" + min + "分<br />" + sec + "秒" + dayOfWeekStr + "曜日";
