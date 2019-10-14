@@ -19,7 +19,7 @@ function getNow() {
     // hour = 10;
     // min = 00;
     //出力用
-    let s = mon + "月" + day + "日<br />" + hour + "時" + min + "分" + "<br />" + dayOfWeekStr + "曜日";
+    let s = mon + "月" + day + "日<br />" + hour + "時" + min + "分" + "<wbr>" + dayOfWeekStr + "曜日";
     return s;
 }
 function getClass() {
