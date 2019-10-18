@@ -33,7 +33,14 @@ function getNow() {
 // E502
 function getClass() {
     let nowclass, add;
-    if ((dayOfWeek == 0) || (dayOfWeek == 6)) {
+    if ((dayOfWeek == 5) && ((hour == 18 && min >= 20) || (hour >= 19))) {
+        dayOfWeek = 1;
+        tomorrow = day + 3;
+        nowclass = tomorrow + "日1限目の空き教室は、";
+        document.getElementById("class").innerHTML = nowclass;
+        first()
+    }
+    else if ((dayOfWeek == 0) || (dayOfWeek == 6)) {
         nowclass = "今日は休日です。<br />月曜1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         dayOfWeek = 1;
