@@ -91,11 +91,11 @@ function first() {
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E406(電源4箇所)<br />E410(電源5箇所)<br />E508(PC?),<wbr>E509(全席電源),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<wbr>K10b<br />K201(電源1箇所)<wbr>K202(電源なし,PC)<wbr>";
+        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E406(電源4箇所)<br />E410(電源5箇所)<br />E508(PC?),<wbr>E509(全席電源),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所)<wbr>K202(電源なし,PC)<wbr>";
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 4) {
-        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC)<br />E507(全席電源)(PC?),<wbr>E508(PC?),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<wbr>K201(電源1箇所)<wbr>K204<br />K300<br />K403<wbr>"
+        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC)<br />E507(全席電源)(PC?),<wbr>E508(PC?),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K201(電源1箇所)<wbr>K204<br />K300<br />K403<wbr>"
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 5) {
@@ -113,7 +113,7 @@ function second() {
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC),<wbr>E406(電源4箇所),<wbr>E409,<wbr>E410(電源5箇所)<br />E508(PC?),<wbr>E509(全席電源)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<wbr>K10b<br />K201(電源1箇所)<wbr>K202(電源なし,PC)<wbr>K203(電源なし,iMac Pro)<wbr>";
+        free = "E208(電源複数)<br />E302<br />E401(電源少,PC),<wbr>E406(電源4箇所),<wbr>E409,<wbr>E410(電源5箇所)<br />E508(PC?),<wbr>E509(全席電源)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所)<wbr>K202(電源なし,PC)<wbr>K203(電源なし,iMac Pro)<wbr>";
         document.getElementById("free-room").innerHTML = free;
     }
     if (dayOfWeek == 4) {
