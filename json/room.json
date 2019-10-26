@@ -240,16 +240,93 @@
         "floor": 5
     },
     {
-        "name": "<br />",
+        "name": "<hr>",
         "use": "00000000",
         "isAvailable": true,
         "floor": 6
     },
     {
-        "name": "E601<wbr>",
-        "capacity": 560,
-        "use": "0C08100C40",
+        "name": "RA<wbr>",
+        "capacity": 30,
+        "use": "F030380800",
         "isAvailable": true,
-        "floor": 6
+        "floor": "?"
+    },
+    {
+        "name": "RB<wbr>",
+        "capacity": 30,
+        "use": "D0F0E0C000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RC<wbr>",
+        "capacity": 50,
+        "use": "00F0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RD<wbr>",
+        "capacity": 48,
+        "use": "E020C030",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RE<wbr>",
+        "capacity": 20,
+        "use": "00F0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<wbr>",
+        "capacity": 30,
+        "use": "",
+        "isAvailable": true,
+        "floor": "?"
     }
 ]
