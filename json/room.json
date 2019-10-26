@@ -1,0 +1,234 @@
+[
+    {
+        "id": "00000204",
+        "name": "E204(電源複数,PC)",
+        "capacity": 40,
+        "use": "E8F0F8C0F0",
+        "isAvailable": true,
+        "floor": 2
+    },
+    {
+        "id": "00000208",
+        "name": "E208(電源複数)",
+        "capacity": 40,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": 2
+    },
+    {
+        "id": "00000302",
+        "name": "E302",
+        "capacity": 10,
+        "use": "0030003030",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
+        "id": "00000303",
+        "name": "E303(PC?)",
+        "capacity": 55,
+        "use": "F8C8F8F8F0",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
+        "id": "00000304",
+        "name": "E304(電源複数,PC)",
+        "capacity": 40,
+        "use": "F8F0F0C000",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
+        "id": "00000306",
+        "name": "E306(PC?)",
+        "capacity": 30,
+        "use": "F0E0F03000",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
+        "id": "00000308",
+        "name": "E308(PC?)",
+        "capacity": 55,
+        "use": "FCF0FCF8F8",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
+        "id": "00000401",
+        "name": "(電源少,PC)",
+        "capacity": 30,
+        "use": "3000300000",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000402",
+        "name": "E402(PC?)",
+        "capacity": 55,
+        "use": "FCF0FCF078",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000403",
+        "name": "E403(PC?)",
+        "capacity": 30,
+        "use": "F030F0F000",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000404",
+        "name": "E404",
+        "capacity": 60,
+        "use": "F0F0F8F0D0",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000405",
+        "name": "E405(電源なし,PC)",
+        "capacity": 30,
+        "use": "C0F0F0CCA0",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000406",
+        "name": "E406(電源4箇所)",
+        "capacity": 60,
+        "use": "F0F038F0E0",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000407",
+        "name": "E407",
+        "capacity": 60,
+        "use": "F8C4F0D4FC",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000408",
+        "name": "E408",
+        "capacity": 60,
+        "use": "D0F0E0F0F4",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000409",
+        "name": "E409",
+        "capacity": 60,
+        "use": "F0B4B0B4F4",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000410",
+        "name": "E410(電源5箇所)",
+        "capacity": 60,
+        "use": "F0F430B4F4",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
+        "id": "00000501",
+        "name": "E501(電源複数,WS)",
+        "capacity": 30,
+        "use": "F000F0C000",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000502",
+        "name": "E502(PC)",
+        "capacity": 55,
+        "use": "78F8FCF0C0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000503",
+        "name": "E503",
+        "capacity": 110,
+        "use": "F0F0F8F0B0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000504",
+        "name": "E504(電源少,WS)",
+        "capacity": 30,
+        "use": "B0F0F0F000",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000506",
+        "name": "E506(全席電源)",
+        "capacity": 50,
+        "use": "F0F0F0F0F0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000507",
+        "name": "E507(全席電源)",
+        "capacity": 50,
+        "use": "F0FCF078B0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000508",
+        "name": "E508(ほぼ全席電源)",
+        "capacity": 50,
+        "use": "60F00000F0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000509",
+        "name": "E509(PC?)",
+        "capacity": 50,
+        "use": "F0E000F0B0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000510",
+        "name": "E510(ほぼ全席電源)",
+        "capacity": 50,
+        "use": "60F06078F0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000327",
+        "name": "E511(PC?)",
+        "capacity": 24,
+        "use": "F0C0F0F0F0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000328",
+        "name": "E512(PC?)",
+        "capacity": 20,
+        "use": "30F0F0F0F0",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
+        "id": "00000329",
+        "name": "E601",
+        "capacity": 560,
+        "use": "0C08100C40",
+        "isAvailable": true,
+        "floor": 6
+    }
+]
