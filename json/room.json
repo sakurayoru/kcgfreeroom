@@ -279,54 +279,5 @@
         "use": "00F0000000",
         "isAvailable": true,
         "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
-    },
-    {
-        "name": "<wbr>",
-        "capacity": 30,
-        "use": "",
-        "isAvailable": true,
-        "floor": "?"
     }
 ]
