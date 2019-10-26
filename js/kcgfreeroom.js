@@ -1,6 +1,7 @@
 timerID = setInterval(clock, 250);
-timerID = setInterval(getClass, 500);
-let year, mon, day, hour, min, sec, dayOfWeek, dayOfWeekStr, free;
+timerID = setInterval(getClass, 1000);
+let year, mon, day, hour, min, sec, dayOfWeek, dayOfWeekStr;
+let free = "";
 function clock() {
     document.getElementById("view_clock").innerHTML = getNow();
 }
@@ -40,38 +41,38 @@ function getClass() {
         nowclass = tomorrow + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 1;
-        search()
+        search(dayOfWeek, period)
     }
     else if ((dayOfWeek == 0) || (dayOfWeek == 6)) {
         nowclass = "今日は休日です。月曜1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         dayOfWeek = 1;
         period = 1
-        search()
+        search(dayOfWeek, period)
     }
     else if ((hour == 11 && min >= 0) || (hour == 12 && min < 40)) {
         nowclass = "2限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 2;
-        search()
+        search(dayOfWeek, period)
     }
     else if ((hour == 12 && min >= 40) || (hour == 13) || (hour == 14)) {
         nowclass = "3限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 3
-        search()
+        search(dayOfWeek, period)
     }
     else if ((hour == 15 && min >= 0) || (hour == 16 && min < 40)) {
         nowclass = "4限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 4;
-        search()
+        search(dayOfWeek, period)
     }
     else if ((hour == 16 && min >= 40) || hour == 17 || (hour == 18 && min < 20)) {
         nowclass = "5限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 5;
-        search()
+        search(dayOfWeek, period)
     }
     else if ((hour == 18 && min >= 20) || (hour >= 19)) {
         add = dayOfWeek + 1;
@@ -80,13 +81,13 @@ function getClass() {
         nowclass = tomorrow + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 1;
-        search()
+        search(dayOfWeek, period)
     }
     else {
         nowclass = day + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         period = 1;
-        search()
+        search(dayOfWeek, period)
     }
 }
 var requestURL = '../json/room.json'
@@ -94,7 +95,7 @@ var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
-function search() {
+function search(dayOfWeek, period) {
     var result = request.response;
     var nor = Object.keys(result).length
     for (let i = 0; i < nor; i++) {
