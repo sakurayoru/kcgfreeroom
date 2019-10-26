@@ -16,6 +16,12 @@
         "floor": 2
     },
     {
+        "name": "<br />",
+        "use": "00000000",
+        "isAvailable": true,
+        "floor": 3
+    },
+    {
         "id": "00000302",
         "name": "E302<wbr>",
         "capacity": 10,
@@ -56,8 +62,14 @@
         "floor": 3
     },
     {
+        "name": "<br />",
+        "use": "00000000",
+        "isAvailable": true,
+        "floor": 4
+    },
+    {
         "id": "00000401",
-        "name": "(電源少,PC)<wbr>",
+        "name": "E401(電源少,PC)<wbr>",
         "capacity": 30,
         "use": "3000300000",
         "isAvailable": true,
@@ -136,6 +148,12 @@
         "floor": 4
     },
     {
+        "name": "<br />",
+        "use": "00000000",
+        "isAvailable": true,
+        "floor": 5
+    },
+    {
         "id": "00000501",
         "name": "E501(電源複数,WS)<wbr>",
         "capacity": 30,
@@ -208,7 +226,6 @@
         "floor": 5
     },
     {
-        "id": "00000327",
         "name": "E511(PC?)<wbr>",
         "capacity": 24,
         "use": "F0C0F0F0F0",
@@ -216,7 +233,6 @@
         "floor": 5
     },
     {
-        "id": "00000328",
         "name": "E512(PC?)<wbr>",
         "capacity": 20,
         "use": "30F0F0F0F0",
@@ -224,7 +240,12 @@
         "floor": 5
     },
     {
-        "id": "00000329",
+        "name": "<br />",
+        "use": "00000000",
+        "isAvailable": true,
+        "floor": 6
+    },
+    {
         "name": "E601<wbr>",
         "capacity": 560,
         "use": "0C08100C40",

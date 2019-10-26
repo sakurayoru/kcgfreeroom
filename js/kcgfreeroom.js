@@ -36,10 +36,10 @@ function getNow() {
 function getClass() {
     let nowclass, add, period;
     if ((dayOfWeek == 5) && ((hour == 18 && min >= 20) || (hour >= 19))) {
-        dayOfWeek = 1;
         tomorrow = day + 3;
         nowclass = tomorrow + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
+        dayOfWeek = 1;
         period = 1;
         search(dayOfWeek, period)
     }
@@ -97,18 +97,18 @@ request.responseType = 'json';
 request.send();
 function search(dayOfWeek, period) {
     free = ""
+    period = period - 1
+    dayOfWeek = dayOfWeek - 1
     var result = request.response;
     var nor = Object.keys(result).length
     for (let i = 0; i < nor; i++) {
         const k = result[i].use; // use 取り出し
-        for (let j = 0; j < nor; j++) {
-            let l = k.match(/.{2}/g); // 2桁区切り
-            let m = l[dayOfWeek]
-            n = m.match(/.{1}/g); // 1桁区切り
-            foo = parseInt(n, 16).toString(2); //16進数=>2進数
-            if (foo[period] == 0) {
-                free += result[i].name
-            }
+        let l = k.match(/.{2}/g); // 2桁区切り
+        let m = l[dayOfWeek]
+        foo = parseInt(m, 16).toString(2); //16進数=>2進数
+        foo = ('00000000' + foo).slice(-8);
+        if (foo[period] == 0) {
+            free += result[i].name
         }
     }
     document.getElementById("free-room").innerHTML = free
