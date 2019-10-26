@@ -279,5 +279,183 @@
         "use": "00F0000000",
         "isAvailable": true,
         "floor": "?"
+    },
+    {
+        "name": "RF<wbr>",
+        "capacity": 30,
+        "use": "00F0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RG<wbr>",
+        "capacity": 30,
+        "use": "0000F0F000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RI<wbr>",
+        "capacity": 66,
+        "use": "00C0003000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RJ<wbr>",
+        "capacity": 10,
+        "use": "F0F0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RK<wbr>",
+        "capacity": 40,
+        "use": "30C0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RM<wbr>",
+        "capacity": 30,
+        "use": "00F0000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "RN<wbr>",
+        "capacity": 40,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<hr>",
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K002<wbr>",
+        "capacity": 30,
+        "use": "F0C0F0F000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K10A<wbr>",
+        "capacity": 32,
+        "use": "00F0F0F000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K10B<wbr>",
+        "capacity": 55,
+        "use": "30F000E030",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<br />",
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K201(電源1箇所)<wbr>",
+        "capacity": 30,
+        "use": "C008000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K202(電源なし,PC)<wbr>",
+        "capacity": 20,
+        "use": "C0C030C0F0",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K203(電源なし,iMac Pro)<wbr>",
+        "capacity": 20,
+        "use": "30F0C0C0F0",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K204<wbr>",
+        "capacity": 15,
+        "use": "0000C03000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<br>",
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K300<wbr>",
+        "capacity": 1,
+        "use": "0030C00000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K301<wbr>",
+        "capacity": 60,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K302<wbr>",
+        "capacity": 30,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K303<wbr>",
+        "capacity": 30,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K304<wbr>",
+        "capacity": 30,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "<br>",
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K401<wbr>",
+        "capacity": 60,
+        "use": "0000000000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K402<wbr>",
+        "capacity": 30,
+        "use": "F0F0F0F000",
+        "isAvailable": true,
+        "floor": "?"
+    },
+    {
+        "name": "K403<wbr>",
+        "capacity": 32,
+        "use": "0030F00000",
+        "isAvailable": true,
+        "floor": "?"
     }
 ]
