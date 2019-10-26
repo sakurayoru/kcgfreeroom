@@ -1,5 +1,5 @@
 timerID = setInterval(clock, 250);
-timerID = setInterval(getClass, 1000);
+timerID = setInterval(getClass, 500);
 let year, mon, day, hour, min, sec, dayOfWeek, dayOfWeekStr, free;
 function clock() {
     document.getElementById("view_clock").innerHTML = getNow();
@@ -33,39 +33,45 @@ function getNow() {
 // E502
 
 function getClass() {
-    let nowclass, add;
+    let nowclass, add, period;
     if ((dayOfWeek == 5) && ((hour == 18 && min >= 20) || (hour >= 19))) {
         dayOfWeek = 1;
         tomorrow = day + 3;
         nowclass = tomorrow + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        first()
+        period = 1;
+        search()
     }
     else if ((dayOfWeek == 0) || (dayOfWeek == 6)) {
-        nowclass = "今日は休日です。2限目の空き教室は、月曜1限目の空き教室は、";
+        nowclass = "今日は休日です。月曜1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
         dayOfWeek = 1;
-        first()
+        period = 1
+        search()
     }
     else if ((hour == 11 && min >= 0) || (hour == 12 && min < 40)) {
         nowclass = "2限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        second()
+        period = 2;
+        search()
     }
     else if ((hour == 12 && min >= 40) || (hour == 13) || (hour == 14)) {
         nowclass = "3限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        third()
+        period = 3
+        search()
     }
     else if ((hour == 15 && min >= 0) || (hour == 16 && min < 40)) {
         nowclass = "4限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        fourth()
+        period = 4;
+        search()
     }
     else if ((hour == 16 && min >= 40) || hour == 17 || (hour == 18 && min < 20)) {
         nowclass = "5限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        fifth()
+        period = 5;
+        search()
     }
     else if ((hour == 18 && min >= 20) || (hour >= 19)) {
         add = dayOfWeek + 1;
@@ -73,121 +79,35 @@ function getClass() {
         tomorrow = day + 1;
         nowclass = tomorrow + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        first()
+        period = 1;
+        search()
     }
     else {
         nowclass = day + "日1限目の空き教室は、";
         document.getElementById("class").innerHTML = nowclass;
-        first()
+        period = 1;
+        search()
     }
 }
-function first() {
-    if (dayOfWeek == 1) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E502(PC),<wbr>E508(ほぼ全席電源),<wbr>E510(PC?),<wbr>E512(PC?)<hr>RC,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RM<hr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
+var requestURL = '../json/room.json'
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+function search() {
+    var result = request.response;
+    var nor = Object.keys(result).length
+    for (let i = 0; i < nor; i++) {
+        const k = result[i].use; // use 取り出し
+        for (let j = 0; j < nor; j++) {
+            let l = k.match(/.{2}/g); // 2桁区切り
+            let m = l[dayOfWeek]
+            n = m.match(/.{1}/g); // 1桁区切り
+            foo = parseInt(n, 16).toString(2); //16進数=>2進数
+            if (foo[period] == 0) {
+                free += result[i].name
+            }
+        }
     }
-    if (dayOfWeek == 2) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E403(電源なし,PC)<br />E501(電源複数,WS)<hr>RA,<wbr>RD,<wbr>RG,<wbr>RK<hr>K201(電源1箇所),<wbr>K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E406(電源4箇所)<br />E410(電源5箇所)<br />E508(ほぼ全席電源),<wbr>E509(全席電源),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC)";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 4) {
-        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC)<br />E507(全席電源)(PC?),<wbr>E508(ほぼ全席電源),<wbr>E510(PC?)<hr>RA,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K201(電源1箇所),<wbr>K204<br />K300<br />K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 5) {
-        free = "E208(電源複数)<br />E302,<wbr>E304(電源複数,PC),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E402(電源複数,PC),<wbr>E403(電源なし,PC)<br />E501(電源複数),<wbr>E504(電源少,WS)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K204< br>K300<br />K402,<wbr>K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-}
-function second() {
-    if (dayOfWeek == 1) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC)<br />E504(電源少,WS),<wbr>E512(PC?)<hr>RC,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RM<hr>K10a,<wbr>K10b<br />K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 2) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E409<br />E501(電源複数)<hr>RA,<wbr>RD,<wbr>RK<hr>K201(電源1箇所),<wbr>K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E401(電源少,PC),<wbr>E406(電源4箇所),<wbr>E409,<wbr>E410(電源5箇所)<br />E508(ほぼ全席電源),<wbr>E509(全席電源)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro)";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 4) {
-        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E409,<wbr>E410(電源5箇所)<br />E508(ほぼ全席電源)<hr>RA,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K201(電源1箇所),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 5) {
-        free = "E208(電源複数)<br />E302,<wbr>E304(電源複数,PC),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E405(PC?)<br />E501(電源複数),<wbr>E503,<wbr>E504(電源少,WS),<wbr>E507(全席電源)(PC?),<wbr>E509(全席電源)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K204<br />K300<br />K402,<wbr>K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-}
-function third() {
-    if (dayOfWeek == 1) {
-        free = "E208(電源複数)<br />E302<br />E405(PC?),<wbr>E408<hr>RB,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RM<hr>K10a<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 2) {
-        free = "E208(電源複数)<br />E303(PC?)<br />E401(電源少,PC),<wbr>E407<br />E501(電源複数),<wbr>E511(PC?)<hr>RG,<wbr>RI,<wbr>RK<hr>K002<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K204";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E508(ほぼ全席電源),<wbr>E509(全席電源)<hr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 4) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E304(電源複数,PC)<br />E401(電源少,PC),<wbr>E405(PC?),<wbr>E407<br />E501(電源複数),<wbr>E508(ほぼ全席電源)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro)<br />K300<br />K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 5) {
-        free = "E208(電源複数)<br />E304(電源複数,PC),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E404<br />E501(電源複数),<wbr>E502(PC),<wbr>E504(電源少,WS)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a<br />K201(電源1箇所),<wbr>K204<br />K300<br />K402,<wbr>K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-}
-function fourth() {
-    if (dayOfWeek == 1) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E302<br />E405(PC?)<br />E508(ほぼ全席電源),<wbr>E510(PC?)<hr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RM<hr>K10a<br />K201(電源1箇所),<wbr>K202(電源なし,PC)<br />K204<br />K300<br />K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 2) {
-        free = "E208(電源複数)<br />E303(PC?),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E407<br />E501(電源複数),<wbr>E509(全席電源),<wbr>E511(PC?)<hr>RD,<wbr>RG,<wbr>RI,<wbr>RK<hr>K002<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K204";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302<br />E408<br />E508(ほぼ全席電源),<wbr>	E509(全席電源),<wbr>E510(PC?)<hr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RM<hr>K10b<br />K201(電源1箇所),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 4) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E304(電源複数,PC)<br />E401(電源少,PC),<wbr>E405(PC?)<br />E501(電源複数),<wbr>E508(ほぼ全席電源)<hr>RA,<wbr>RC,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro)<br />K300<br />K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 5) {
-        free = "E208(電源複数)<br />E304(電源複数,PC)<br />E401(電源少,PC),<wbr>E405(PC?)<br />E501(電源複数),<wbr>E508(ほぼ全席電源)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a<br />K201(電源1箇所),<wbr>K204<br />K300<br />K402,<wbr>K403"
-        document.getElementById("free-room").innerHTML = free;
-    }
-}
-function fifth() {
-    if (dayOfWeek == 1) {
-        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E404,<wbr>E405(PC?),<wbr>E406(電源4箇所),<wbr>E408,<wbr>	E409,<wbr>E410(電源5箇所)<br />E501(電源複数),<wbr>E503,<wbr>E504(電源少,WS),<wbr>E506(全席電源),<wbr>E507(全席電源)(PC?),<wbr>E508(ほぼ全席電源),<wbr>E509(全席電源),<wbr>E510(PC?),<wbr>E511(PC?),<wbr>E512(PC?)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K402,<wbr>K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 2) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E302,<wbr>E304(電源複数,PC),<wbr>E306(全席電源,PC),<wbr>E308(PC?)<br />E401(電源少,PC),<wbr>E402(電源複数,PC),<wbr>E403(電源なし,PC),<wbr>E404,<wbr>E405(PC?),<wbr>E406(電源4箇所),<wbr>E407,<wbr>E408,<wbr>	E409,<wbr>E410(電源5箇所)<br />E501(電源複数),<wbr>E503,<wbr>E504(電源少,WS),<wbr>E506(全席電源),<wbr>E508(ほぼ全席電源),<wbr>E509(全席電源),<wbr>E510(PC?),<wbr>E511(PC?),<wbr>E512(PC?)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K402,<wbr>K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 3) {
-        free = "E208(電源複数)<br />E302,<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E405(PC?),<wbr>E407,<wbr>E408,<wbr>E409,<wbr>E410(電源5箇所)<br />E501(電源複数),<wbr>E504(電源少,WS),<wbr>E506(全席電源),<wbr>E507(全席電源)(PC?),<wbr>E508(ほぼ全席電源),<wbr>E509(全席電源),<wbr>E510(PC?),<wbr>E511(PC?),<wbr>E512(PC?)<hr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K402,<wbr>K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 4) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E302,<wbr>E304(電源複数,PC),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E402(電源複数,PC),<wbr>E403(電源なし,PC),<wbr>E404,<wbr>E406(電源4箇所),<wbr>E407,<wbr>E408,<wbr>E409,<wbr>E410(電源5箇所)<br />E501(電源複数),<wbr>E502(PC),<wbr>E503,<wbr>E504(電源少,WS),<wbr>E506(全席電源),<wbr>E508(ほぼ全席電源),<wbr>E509(全席電源),<wbr>E511(PC?),<wbr>E512(PC?)<hr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K402,<wbr>K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
-    if (dayOfWeek == 5) {
-        free = "E204(PC),<wbr>E208(電源複数)<br />E302,<wbr>E303(PC?)E304(電源複数,PC),<wbr>E306(全席電源,PC)<br />E401(電源少,PC),<wbr>E403(電源なし,PC),<wbr>E404,<wbr>E406(電源4箇所),<wbr>E405(PC?),<wbr>E406(電源4箇所),<wbr>E408,<wbr>E409,<wbr>E410(電源5箇所)<br />E501(電源複数),<wbr>E502(PC),<wbr>E503,<wbr>E504(電源少,WS),<wbr>E506(全席電源),<wbr>E507(全席電源)(PC?),<wbr>508(PC?),<wbr>E509(全席電源)E510(PC?),<wbr>E511(PC?),<wbr>E512(PC?)<hr>RA,<wbr>RB,<wbr>RC,<wbr>RD,<wbr>RE,<wbr>RF,<wbr>RG,<wbr>RI,<wbr>RJ,<wbr>RK,<wbr>RM<hr>K002,<wbr>K10a,<wbr>K10b<br />K201(電源1箇所),<wbr>K202(電源なし,PC),<wbr>K203(電源なし,iMac Pro),<wbr>K204<br />K300<br />K402,<wbr>K403";
-        document.getElementById("free-room").innerHTML = free;
-    }
+    document.getElementById("free-room").innerHTML = free
 }
