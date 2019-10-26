@@ -96,6 +96,7 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 function search(dayOfWeek, period) {
+    free = ""
     var result = request.response;
     var nor = Object.keys(result).length
     for (let i = 0; i < nor; i++) {
