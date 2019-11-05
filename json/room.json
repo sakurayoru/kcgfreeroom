@@ -246,94 +246,94 @@
         "floor": 6
     },
     {
-        "name": "RA,<wbr>",
+        "name": "RA(PC),<wbr>",
         "capacity": 30,
         "use": "F030380800",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "1"
     },
     {
-        "name": "RB,<wbr>",
+        "name": "RB(PC,電源複数),<wbr>",
         "capacity": 30,
         "use": "D0F0E0C000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "1"
     },
     {
-        "name": "RC,<wbr>",
+        "name": "RC(電源2箇所),<wbr>",
         "capacity": 50,
         "use": "00F0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "2"
     },
     {
-        "name": "RD,<wbr>",
+        "name": "RD(全席電源),<wbr>",
         "capacity": 48,
         "use": "E020C030",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "1"
     },
     {
-        "name": "RE,<wbr>",
+        "name": "RE(iMac,電源2箇所),<wbr>",
         "capacity": 20,
         "use": "00F0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "1"
     },
     {
-        "name": "RF,<wbr>",
+        "name": "RF(電源複数,CINCS前),<wbr>",
         "capacity": 30,
         "use": "00F0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "2"
     },
     {
         "name": "RG,<wbr>",
         "capacity": 30,
         "use": "0000F0F000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "2"
     },
     {
         "name": "RI,<wbr>",
         "capacity": 66,
         "use": "00C0003000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "3"
     },
     {
         "name": "RJ,<wbr>",
         "capacity": 10,
         "use": "F0F0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "3"
     },
     {
         "name": "RK,<wbr>",
         "capacity": 40,
         "use": "30C0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "4"
     },
     {
         "name": "RM,<wbr>",
         "capacity": 30,
         "use": "00F0000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "2"
     },
     {
         "name": "RN,<wbr>",
         "capacity": 40,
         "use": "0000000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "3"
     },
     {
         "name": "<hr>",
         "use": "0000000000",
         "isAvailable": true,
-        "floor": "?"
+        "floor": "None"
     },
     {
         "name": "K002,<wbr>",
