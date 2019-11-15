@@ -15,24 +15,10 @@ function getNow() {
     sec = now.getSeconds();
     dayOfWeek = now.getDay();
     dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
-    // デバッグ日時変更
-    // dayOfWeek = 1;
-    // hour = 10;
-    // min = 00;
     //出力用
     let s = mon + "月" + day + "日 <wbr>" + hour + "時" + min + "分" + "<wbr>" + dayOfWeekStr + "曜日";
     return s;
 }
-// 調査済み教室
-// E204(電源複数,PC),E208
-// E304(電源複数,PC)
-// E401(電源少,PC),E406(電源4箇所),E410(電源5箇所)
-// E501(電源複数,WS),E502,E504(電源少,WS),E506(全席電源),E507(全席電源),E508(ほぼ全席電源),E509
-// K201(電源1箇所),K202(電源なし,PC),K203(電源なし,iMac Pro)
-// 電源状況未確認部屋↓
-// E404,E408,E409
-// E502
-
 function getClass() {
     let nowclass, add, period;
     if ((dayOfWeek == 5) && ((hour == 18 && min >= 20) || (hour >= 19))) {
