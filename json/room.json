@@ -233,7 +233,7 @@
         "floor": 5
     },
     {
-        "name": "E512(PC?),<wbr>",
+        "name": "E512(PC,液タブ),<wbr>",
         "capacity": 20,
         "use": "30F0F0F0F0",
         "isAvailable": true,
