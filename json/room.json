@@ -211,7 +211,7 @@
     },
     {
         "id": "00000509",
-        "name": "E509(PC?),<wbr>",
+        "name": "E509(全席電源),<wbr>",
         "capacity": 50,
         "use": "F0E000F0B0",
         "isAvailable": true,
